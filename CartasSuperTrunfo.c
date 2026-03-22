@@ -65,14 +65,33 @@ int main() {
     float Densidade2 = (float) populacao2/area2;
     float pibper2 = (float) pib2/populacao2;
 
-  // Área para exibição dos dados da cidade
+    //super poder: soma da população; área; PIB; numero de pontos turistico; PIB percapita; INVERSO da densidade populacional - FLOAT
+    float superpoder1 = (float) populacao1 + (float) area1 + (float) pib1 + (float) ponTur1 + (float) pibper1 - (float) Densidade1;
+    float superpoder2 = (float) populacao2 + (float) area2 + (float) pib2 + (float) ponTur2 + (float) pibper2 - (float) Densidade2;
+
+    //Comparações das cartas:
+    int comparaPopulacao = populacao1 > populacao2;
+    int comparaArea = area1 > area2;
+    int comparaPIB = pib1> pib2;
+    int comparPontur = ponTur1 > ponTur2;
+    int comparaDensidade = Densidade1 < Densidade2;
+    int comparaPIBPer = pibper1 > pibper2;
+    int comparaSuperpoder = superpoder1 > superpoder2;
+    
+    // Área para exibição dos dados da cidade
     printf("Parabens, suas cartas foram criadas, fique agora com o resultado final:\n");
 
     //Carta 1:
-    printf("Carta1:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n\n", estado1, estado1, codigo1, nome1, populacao1, area1, pib1, ponTur1, Densidade1, pibper1);
+    printf("\nCarta1:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n Super poder: %.2f", estado1, estado1, codigo1, nome1, populacao1, area1, pib1, ponTur1, Densidade1, pibper1, superpoder1);
 
     //Carta 2:
-    printf("Carta2:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n", estado2, estado2, codigo2, nome2, populacao2, area2, pib2, ponTur2, Densidade2, pibper2);
+    printf("\n\nCarta2:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n Super poder: %.2f", estado2, estado2, codigo2, nome2, populacao2, area2, pib2, ponTur2, Densidade2, pibper2, superpoder2);
+
+    //Comparação de cartas:
+    printf("\n\nAgora vamos descobrir em quais atributos a Carta 1 venceu a Carta 2: \n População: %d\n Area em m²: %d\n Pib: %d\n Pontos turisticos: %d\n Densidade populacional: %d\n Pib per capita: %d\n Super poder: %d",comparaPopulacao, comparaArea, comparaPIB,comparPontur, comparaDensidade, comparaPIBPer, comparaSuperpoder);
+
+    //Finalização
+    printf("\nRodada concluida com sucesso!! Para jogar novamente, é só rodar o codigo mais uma vez, Obrigado por jogar!\n\n");
 
 return 0;
 } 
