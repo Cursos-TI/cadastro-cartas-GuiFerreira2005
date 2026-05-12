@@ -88,7 +88,14 @@ int main() {
     printf("\n\nCarta2:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n Super poder: %.2f", estado2, estado2, codigo2, nome2, populacao2, area2, pib2, ponTur2, Densidade2, pibper2, superpoder2);
 
     //Comparação de cartas:
-    printf("\n\nAgora vamos descobrir em quais atributos a Carta 1 venceu a Carta 2: \n População: %d\n Area em m²: %d\n Pib: %d\n Pontos turisticos: %d\n Densidade populacional: %d\n Pib per capita: %d\n Super poder: %d",comparaPopulacao, comparaArea, comparaPIB,comparPontur, comparaDensidade, comparaPIBPer, comparaSuperpoder);
+    printf("\n\nAgora vamos descobrir em qual carta ganhou: \n");
+    
+    //Comparação das cartas referente ao super poder de cartas
+    if (superpoder1 > superpoder2) {
+      printf("carta 1 ganhou!");
+    } else {
+      printf("Carta 2 ganhou!");
+    }
 
     //Finalização
     printf("\nRodada concluida com sucesso!! Para jogar novamente, é só rodar o codigo mais uma vez, Obrigado por jogar!\n\n");
