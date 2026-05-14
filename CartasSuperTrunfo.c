@@ -44,6 +44,7 @@ int main() {
     
     float Densidade1 = (float) populacao1/area1;
     float pibper1 = (float) pib1/populacao1;
+    int RespostaComparacao;
 
     printf("Agora vamos cadastrar a sua proxima carta:\n");
 
@@ -68,19 +69,14 @@ int main() {
     //super poder: soma da população; área; PIB; numero de pontos turistico; PIB percapita; INVERSO da densidade populacional - FLOAT
     float superpoder1 = (float) populacao1 + (float) area1 + (float) pib1 + (float) ponTur1 + (float) pibper1 - (float) Densidade1;
     float superpoder2 = (float) populacao2 + (float) area2 + (float) pib2 + (float) ponTur2 + (float) pibper2 - (float) Densidade2;
-
-    //Comparações das cartas:
-    int comparaPopulacao = populacao1 > populacao2;
-    int comparaArea = area1 > area2;
-    int comparaPIB = pib1> pib2;
-    int comparPontur = ponTur1 > ponTur2;
-    int comparaDensidade = Densidade1 < Densidade2;
-    int comparaPIBPer = pibper1 > pibper2;
-    int comparaSuperpoder = superpoder1 > superpoder2;
-    
+   
     // Área para exibição dos dados da cidade
-    printf("Parabens, suas cartas foram criadas, fique agora com o resultado final:\n");
+    printf("Parabens, suas cartas foram criadas, agora escolha qual atributo voce irá comparar:\n");
 
+    printf("1.População \n2.Area \n3.Pib \n4.Pontos turisticos \n5.Densidade populacional \n6.Pib percapto \n7.Super poder \n");
+
+    scanf("%d", &RespostaComparacao);
+    printf("A opção escolhida foi: %d", RespostaComparacao);
     //Carta 1:
     printf("\nCarta1:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n Super poder: %.2f", estado1, estado1, codigo1, nome1, populacao1, area1, pib1, ponTur1, Densidade1, pibper1, superpoder1);
 
@@ -88,13 +84,78 @@ int main() {
     printf("\n\nCarta2:\n Estado: %s\n Codigo: %s0%s\n Nome: %s\n População: %d\n Area em m²: %.2fm²\n Pib: R$%.2f\n Pontos turisticos: %d\n Densidade populacional: %.2f\n Pib per capita: %.2f\n Super poder: %.2f", estado2, estado2, codigo2, nome2, populacao2, area2, pib2, ponTur2, Densidade2, pibper2, superpoder2);
 
     //Comparação de cartas:
-    printf("\n\nAgora vamos descobrir em qual carta ganhou: \n");
+    printf("\n\nAgora vamos descobrir qual carta ganhou: \n");
     
     //Comparação das cartas referente ao super poder de cartas
-    if (superpoder1 > superpoder2) {
-      printf("carta 1 ganhou!");
-    } else {
-      printf("Carta 2 ganhou!");
+    switch (RespostaComparacao)
+    {
+    case 1:
+      if (populacao1 > populacao2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+
+    case 2:
+      if (area1 > area2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+
+    case 3:
+      if (pib1 > pib2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+
+    case 4:
+      if (ponTur1 > ponTur2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+               
+    case 5:
+      if (Densidade1 > Densidade2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+
+    case 6:
+      if (pibper1 > pibper2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    break;
+
+    case 7:
+      if (superpoder1 > superpoder2)
+      {
+        printf("A carta %9s foi a vencedora!", nome1);
+      } else {
+        printf("A carta %9s foi a vencedora!", nome2);
+      }
+    
+      break;
+    
+    default:
+      printf("Opção invalida");
+      break;
     }
 
     //Finalização
